@@ -8,6 +8,8 @@
     "start": "node dist/main.js"
   },
   "dependencies": {
-    "@elixir/core": "workspace:*"
+    "@elixir/core": "workspace:*",
+    "@stellar/stellar-sdk": "^17.0.0",
+    "zod": "^3.24.0"
   }
 }
