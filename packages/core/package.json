@@ -8,7 +8,8 @@
   "exports": {
     ".": "./dist/index.js",
     "./db": "./dist/db/index.js",
-    "./config": "./dist/config/index.js"
+    "./config": "./dist/config/index.js",
+    "./test-db": "./dist/db/test-db.js"
   },
   "scripts": {
     "migrate": "tsx src/db/migrate-cli.ts"
