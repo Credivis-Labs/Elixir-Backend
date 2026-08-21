@@ -1,0 +1,32 @@
+{
+  "name": "elixir-backend",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "migrate": "pnpm --filter @elixir/core migrate",
+    "dev:api": "pnpm --filter @elixir/api dev",
+    "dev:relayer": "pnpm --filter @elixir/relayer dev",
+    "dev:indexer": "pnpm --filter @elixir/indexer dev"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^2.1.0"
+  },
+  "type": "module"
+}

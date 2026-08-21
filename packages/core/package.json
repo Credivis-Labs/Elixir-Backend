@@ -1,0 +1,21 @@
+{
+  "name": "@elixir/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./db": "./dist/db/index.js",
+    "./config": "./dist/config/index.js"
+  },
+  "scripts": {
+    "migrate": "tsx src/db/migrate-cli.ts"
+  },
+  "dependencies": {
+    "pino": "^9.5.0",
+    "postgres": "^3.4.5",
+    "zod": "^3.24.0"
+  }
+}
