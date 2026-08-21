@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: elixir
+      POSTGRES_PASSWORD: elixir
+      POSTGRES_DB: elixir
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U elixir"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  stellar:
+    image: stellar/quickstart:latest
+    command: --local --enable-soroban-rpc --limits testnet
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:

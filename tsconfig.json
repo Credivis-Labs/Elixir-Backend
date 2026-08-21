@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/core" },
+    { "path": "services/api" },
+    { "path": "services/relayer" },
+    { "path": "services/indexer" }
+  ]
+}
