@@ -39,6 +39,9 @@ describe.skipIf(!sql)("proposal coordination", () => {
   };
 
   beforeAll(async () => {
+    // proposals references accounts; clear children first so a re-run of this
+    // suite against a non-empty database is not blocked by the foreign key.
+    await sql!`delete from proposals where account = ${account}`;
     await sql!`delete from accounts where address = ${account}`;
     await sql!`insert into accounts (address, network, config_epoch, threshold)
                values (${account}, 'testnet', 0, 2)`;
